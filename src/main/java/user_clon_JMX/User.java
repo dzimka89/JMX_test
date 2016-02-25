@@ -65,8 +65,8 @@ public class User implements Cloneable, CloneUserInterfaceMBean {
     }
 
 
-
-    public String getObjectInfo() {
+    @Override
+    public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
@@ -75,12 +75,21 @@ public class User implements Cloneable, CloneUserInterfaceMBean {
                 '}';
     }
 
+    public String getObjectInfo() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", marriage=" + marriage +
+                ", parent=" + parent.toString() +
+                '}';
+    }
+
     public void printObjectInfo() {
         System.out.println("User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", marriage=" + marriage +
-                ", parent=" + parent +
+                ", parent=" + parent.toString() +
                 '}');
     }
 
@@ -106,4 +115,7 @@ public class User implements Cloneable, CloneUserInterfaceMBean {
         result = 31 * result + (parent != null ? parent.hashCode() : 0);
         return result;
     }
+
+
+
 }

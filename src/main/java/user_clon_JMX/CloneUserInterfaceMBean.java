@@ -13,4 +13,10 @@ public interface CloneUserInterfaceMBean {
 
     void printObjectInfo();
 
+    public void setName(String name);
+
+    public void setAge(int age);
+
+    public void setMarriage(boolean marriage);
+
 }
